@@ -26,7 +26,7 @@
       div.list {
         div {
           padding: 0.5rem;
-          border: 0.1rem solid pink
+          border: 0.1rem solid pink;
         }
       }
     </style>
@@ -36,10 +36,27 @@
     <section>
       <h2>테스트</h2>
       <div class="list">
-        <div onclick='location.replace("https://teiming.github.io/Language-of-Love/")'>
+        <div id="lovelang">
           <span>사랑의 언어 테스트</span>
         </div>
-      </div class="list">
+      </div>
     </section>
+    <section>
+      <h2>컬러</h2>
+      <div class="list">
+        <div id="pccs">
+          <span>PCCS 팔레트</span>
+        </div>
+      </div>
+    </section>
+    <script>
+      const addLink = (id, url) => {
+        document.getElementById(id).addEventListener('click', () => {
+          location.replace(url);
+        });
+      };
+      addLink('lovelang', 'https://teiming.github.io/love-languages/');
+      addLink('pccs', 'https://teiming.github.io/pccs/');
+    </script>
   </body>
 </html>
