@@ -11,44 +11,55 @@
         box-sizing: border-box;
       }
       :root {
-        background-color: black;
-        body {
-          background-color: #ccc;
-          max-width: 30rem;
-          margin: auto;
-          height: 100dvh;
-        }
+        --primary-color: color(display-p3 0.8 0.6 0.8);
+        --shade: color-mix(in display-p3, var(--primary-color), black);
+        --light: color-mix(in display-p3, var(--primary-color), white);
+        background-color: var(--shade);
+      }
+      body {
+        background-color: var(--primary-color);
+        max-width: 30rem;
+        margin: auto;
+        height: 100dvh;
+      }
+      main {
+        padding: 1rem;
       }
       h2 {
-        padding: 1rem;
-        background-color: pink;
+        font-size: 1rem;
+        padding: 0.25rem 1rem;
       }
       div.list {
         div {
-          padding: 0.5rem;
-          border: 0.1rem solid pink;
+          background-color: var(--light);
+          border-radius: 0.5rem;
+          padding: 0.5rem 1rem;
+
+          font-size: 1.25rem;
         }
       }
     </style>
-    <title>Teiming</title>
+    <title>Teiming | github.io</title>
   </head>
   <body>
-    <section>
-      <h2>테스트</h2>
-      <div class="list">
-        <div id="lovelang">
-          <span>사랑의 언어 테스트</span>
+    <main style="display: flex; flex-direction: column; gap: 0.5rem">
+      <section>
+        <h2>테스트</h2>
+        <div class="list">
+          <div id="lovelang">
+            <span>사랑의 언어 테스트</span>
+          </div>
         </div>
-      </div>
-    </section>
-    <section>
-      <h2>컬러</h2>
-      <div class="list">
-        <div id="pccs">
-          <span>PCCS 팔레트</span>
+      </section>
+      <section>
+        <h2>컬러</h2>
+        <div class="list">
+          <div id="pccs">
+            <span>PCCS 팔레트</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
     <script>
       const addLink = (id, url) => {
         document.getElementById(id).addEventListener('click', () => {
